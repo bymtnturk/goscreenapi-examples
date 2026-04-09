@@ -23,3 +23,27 @@ curl -X POST https://goscreenapi.com/api/v1/screenshot \
     "format": "png",
     "full_page": true
   }'
+
+## Node.js Example
+
+```js
+async function run() {
+  const response = await fetch("https://goscreenapi.com/api/v1/screenshot", {
+    method: "POST",
+    headers: {
+      "Authorization": "Bearer YOUR_API_KEY",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      url: "https://example.com",
+      format: "png",
+      full_page: true
+    })
+  });
+
+  const data = await response.json();
+  console.log(data);
+}
+
+run();
+
